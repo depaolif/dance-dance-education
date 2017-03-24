@@ -1,0 +1,12 @@
+<%= form_for @dance_style do |f| %>
+  <%= f.text_field :name %>
+  <%= f.collection_select :country_id, Country.all, :id, :name %>
+  <p>Or create a new country:</p><br>
+  Name: <%= text_field @country, :name %>
+  Climate: <%= text_field @country, :climate %>
+  Languages Spoken <%= text_field @country, :languages_spoken %>
+  <%= f.collection_select :time_signature_id, TimeSignature.all, :id :count %>
+  <p>Or create a new time signature:</p><br>
+  Name: <%= text_field @time_signature, :name %>
+  <=% f.submit %>
+<% end %>
